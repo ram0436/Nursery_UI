@@ -281,11 +281,11 @@ export class FilteredPostsComponent {
     }
 
     // Filter by brand
-    if (filters.brands.length > 0) {
-      filteredProducts = filteredProducts.filter((product) =>
-        product.brand.some((b: any) => filters.brands.includes(b.id))
-      );
-    }
+    // if (filters.brands.length > 0) {
+    //   filteredProducts = filteredProducts.filter((product) =>
+    //     product.brand.some((b: any) => filters.brands.includes(b.id))
+    //   );
+    // }
 
     // Filter by color
     if (filters.colors.length > 0) {
@@ -369,15 +369,15 @@ export class FilteredPostsComponent {
         return true;
       });
 
-      const uniqueBrands = Array.from(
-        new Set(
-          this.products.map((product) => JSON.stringify(product.brand[0]))
-        )
-      ).map((brandStr) => JSON.parse(brandStr));
+      // const uniqueBrands = Array.from(
+      //   new Set(
+      //     this.products.map((product) => JSON.stringify(product.brand[0]))
+      //   )
+      // ).map((brandStr) => JSON.parse(brandStr));
 
-      this.masterService.setBrandsData({
-        brands: uniqueBrands,
-      });
+      // this.masterService.setBrandsData({
+      //   brands: uniqueBrands,
+      // });
 
       this.products.forEach((product) => {
         this.fetchSizeDetails(product);
