@@ -149,7 +149,7 @@ export class PostCardsComponent {
           injectStyles: [
             `
             .swiper-pagination-bullet{
-              background-color: #ff3f6c;
+              background-color: var(--dynamic-app-color);
               z-index: 6;
             }
 
