@@ -29,7 +29,7 @@ export class ProductDetailsComponent {
   showModal: boolean = false;
   productDetails: any;
   favoriteStatus: { [key: string]: boolean } = {};
-  selectedSize: number | null = null;
+  selectedSize: number = 0;
   dialogRef: MatDialogRef<any> | null = null;
   isUserLogedIn: boolean = false;
 
@@ -209,7 +209,7 @@ export class ProductDetailsComponent {
 
   addToBag(productId: string) {
     if (localStorage.getItem("id") != null) {
-      if (this.selectedSize !== null) {
+      if (this.selectedSize !== 0) {
         const cartItem = {
           id: 0,
           productCode: productId,

@@ -1,7 +1,4 @@
 <div class="filters">
-  <!-- <div class="filter-head">
-    <span class="head-title">FILTERS</span>
-  </div> -->
   <div class="filter-categories" *ngIf="this.subCategoryId === 0">
     <span class="filter-title">Categories</span>
     <ul class="categories-list">
@@ -19,64 +16,11 @@
     </ul>
   </div>
 
-  <!-- <div class="filter-brands">
-    <span class="filter-title">Brand</span>
-    <div
-      class="filter-searchbox"
-      [class.filter-search-expanded]="brandsExpanded"
-    >
-      <input
-        type="text"
-        class="search-inputBox"
-        placeholder="Search for Brands"
-        [(ngModel)]="brandSearchText"
-        [class.search-hidden]="!brandsExpanded"
-        (input)="applyFilters()"
-      />
-      <span
-        class="material-icons-outlined search-icon"
-        (click)="toggleBrandsSearch()"
-      >
-        {{ brandsExpanded ? "clear" : "search" }}
-      </span>
-    </div>
-    <ul class="brands-list" *ngIf="filteredBrands.length !== 0">
-      <li
-        *ngFor="
-          let brand of showAllBrands
-            ? filteredBrands
-            : filteredBrands.slice(0, 10)
-        "
-      >
-        <label for="" class="custom-checkbox">
-          <input
-            type="checkbox"
-            [value]="brand.id"
-            (change)="toggleBrand(brand.id)"
-          />
-          {{ brand.name }}
-          <div class="checkbox-indicator"></div>
-        </label>
-      </li>
-      <li *ngIf="filteredBrands.length > 10">
-        <button (click)="toggleShowAllBrands()" class="show-all-btn">
-          {{ showAllBrands ? "Show Less" : "Show More" }}
-        </button>
-      </li>
-    </ul>
-    <ul *ngIf="brands.length === 0">
-      <li class="text-center">No Discounts Found</li>
-    </ul>
-    <ul *ngIf="filteredBrands.length === 0 && brandSearchText.length > 0">
-      <li>No brands found</li>
-    </ul>
-  </div> -->
   <div class="slider-container">
     <span class="filter-title price-title">Price</span>
     <mat-slider
       [min]="sliderMin"
       [max]="sliderMaxValue"
-      [(ngModel)]="sliderValue"
       (input)="onSliderChange($event)"
     >
       <input matSliderStartThumb [(ngModel)]="minValue" />
@@ -192,7 +136,6 @@
             [value]="discount.id"
             (change)="toggleDiscount(discount.id)"
           />
-          <!-- [checked]="selectedDiscount.includes(discount.id)" -->
           {{ discount.percent }}
           <div class="checkbox-indicator"></div>
         </label>
@@ -207,20 +150,5 @@
     <ul *ngIf="discounts.length === 0">
       <li class="text-center">No Discounts Found</li>
     </ul>
-    <!-- <ul class="brands-list">
-      <li>
-        <label for="" class="custom-checkbox">
-          <input
-            type="radio"
-            value="10"
-            name="discountRange"
-            (change)="selectDiscount('10')"
-            [checked]="selectedDiscount === '10'"
-          />
-          10% and above
-          <div class="checkbox-indicator"></div>
-        </label>
-      </li>
-    </ul> -->
   </div>
 </div>

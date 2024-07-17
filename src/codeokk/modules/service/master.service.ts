@@ -17,23 +17,23 @@ export class MasterService {
   private baseUrl = environment.baseUrl;
 
   getAllParentCategories() {
-    return this.http.get(`${this.baseUrl}/Master/GetAllParentCategory`);
+    return this.http.get(`${this.baseUrl}Master/GetAllParentCategory`);
   }
 
   getAllBrands() {
-    return this.http.get(`${this.baseUrl}/Master/GetAllBrand`);
+    return this.http.get(`${this.baseUrl}Master/GetAllBrand`);
   }
 
   getAllColors() {
-    return this.http.get(`${this.baseUrl}/Master/GetAllColor`);
+    return this.http.get(`${this.baseUrl}Master/GetAllColor`);
   }
 
   getAllDiscount() {
-    return this.http.get(`${this.baseUrl}/Master/GetAllDiscount`);
+    return this.http.get(`${this.baseUrl}Master/GetAllDiscount`);
   }
 
   getAllProductSize() {
-    return this.http.get(`${this.baseUrl}/Master/GetAllProductSize`);
+    return this.http.get(`${this.baseUrl}Master/GetAllProductSize`);
   }
 
   getBrandBySubCategoryId(subCategoryId: number) {
@@ -44,19 +44,19 @@ export class MasterService {
 
   removeParentCategory(parentCategoryId: number) {
     return this.http.delete(
-      `${this.baseUrl}/Master/RemoveParentCategoryId?parentCategoryId=${parentCategoryId}`
+      `${this.baseUrl}Master/RemoveParentCategoryId?parentCategoryId=${parentCategoryId}`
     );
   }
 
   removeCategory(categoryId: number) {
     return this.http.delete(
-      `${this.baseUrl}/Master/RemoveCategoryId?categoryId=${categoryId}`
+      `${this.baseUrl}Master/RemoveCategoryId?categoryId=${categoryId}`
     );
   }
 
   removeSubCategory(subCategoryId: number) {
     return this.http.delete(
-      `${this.baseUrl}/Master/RemoveSubCategoryById?subCategoryId=${subCategoryId}`
+      `${this.baseUrl}Master/RemoveSubCategoryById?subCategoryId=${subCategoryId}`
     );
   }
 
@@ -74,31 +74,31 @@ export class MasterService {
 
   getAllDiscountBySubCategoryId(subCategoryId: number) {
     return this.http.get(
-      `${this.baseUrl}/Master/GetAllDiscountBySubCategoryId?subCategoryId=${subCategoryId}`
+      `${this.baseUrl}Master/GetAllDiscountBySubCategoryId?subCategoryId=${subCategoryId}`
     );
   }
 
   getAllColorByCategoryId(categoryId: number) {
     return this.http.get(
-      `${this.baseUrl}/Master/GetAllColorByCategoryId?categoryId=${categoryId}`
+      `${this.baseUrl}Master/GetAllColorByCategoryId?categoryId=${categoryId}`
     );
   }
 
   getAllDiscountByCategoryId(categoryId: number) {
     return this.http.get(
-      `${this.baseUrl}/Master/GetAllDiscountByCategoryId?categoryId=${categoryId}`
+      `${this.baseUrl}Master/GetAllDiscountByCategoryId?categoryId=${categoryId}`
     );
   }
 
   getCategoryByParentCategoryId(parentCategoryId: number) {
     return this.http.get(
-      `${this.baseUrl}/Master/GetCategoryByParentCategoryId?parentCategoryId=${parentCategoryId}`
+      `${this.baseUrl}Master/GetCategoryByParentCategoryId?parentCategoryId=${parentCategoryId}`
     );
   }
 
   getSubCategoryByCategoryId(categoryId: number) {
     return this.http.get(
-      `${this.baseUrl}/Master/GetSubCategoryByCategoryId?CategoryId=${categoryId}`
+      `${this.baseUrl}Master/GetSubCategoryByCategoryId?CategoryId=${categoryId}`
     );
   }
 
@@ -107,19 +107,19 @@ export class MasterService {
   }
 
   addParentCategory(payload: any) {
-    return this.http.post(`${this.baseUrl}/Master/AddParentCategory`, payload);
+    return this.http.post(`${this.baseUrl}Master/AddParentCategory`, payload);
   }
 
   addCategory(payload: any) {
-    return this.http.post(`${this.baseUrl}/Master/AddCategory`, payload);
+    return this.http.post(`${this.baseUrl}Master/AddCategory`, payload);
   }
 
   addSubCategory(payload: any) {
-    return this.http.post(`${this.baseUrl}/Master/AddSubCategory`, payload);
+    return this.http.post(`${this.baseUrl}Master/AddSubCategory`, payload);
   }
 
   addColor(payload: any) {
-    return this.http.post(`${this.baseUrl}/Master/AddColor`, payload);
+    return this.http.post(`${this.baseUrl}Master/AddColor`, payload);
   }
 
   setData(data: any) {

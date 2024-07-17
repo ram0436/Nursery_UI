@@ -295,7 +295,6 @@ export class CartComponent {
         productSizeDetails,
         quantity: 1,
       });
-      console.log(this.cartProducts);
     });
   }
 
