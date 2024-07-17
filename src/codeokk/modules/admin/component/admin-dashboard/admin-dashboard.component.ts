@@ -83,7 +83,7 @@ export class AdminDashboardComponent {
   activeMainOption: string = "productEntry";
 
   brandCtrl = new FormControl();
-  filteredBrands!: Observable<Brand[]>;
+  // filteredBrands!: Observable<Brand[]>;
 
   product: any = [];
 
@@ -127,12 +127,12 @@ export class AdminDashboardComponent {
     for (var i = 0; i < this.cardsCount.length; i++) {
       this.cardsCount[i] = "";
     }
-    forkJoin({
-      brands: this.getAllBrands(),
-    }).subscribe((results: any) => {
-      this.brands = results.brands;
-      this.setupFilteredBrands();
-    });
+    // forkJoin({
+    //   brands: this.getAllBrands(),
+    // }).subscribe((results: any) => {
+    //   this.brands = results.brands;
+    //   this.setupFilteredBrands();
+    // });
     this.route.queryParams.subscribe((params) => {
       this.code = params["code"];
       if (this.code !== undefined) {
@@ -145,13 +145,13 @@ export class AdminDashboardComponent {
     });
   }
 
-  setupFilteredBrands() {
-    this.filteredBrands = this.brandCtrl.valueChanges.pipe(
-      startWith(""),
-      map((value) => (typeof value === "string" ? value : value?.name || "")),
-      map((name) => (name ? this._filterBrands(name) : this.brands.slice()))
-    );
-  }
+  // setupFilteredBrands() {
+  //   this.filteredBrands = this.brandCtrl.valueChanges.pipe(
+  //     startWith(""),
+  //     map((value) => (typeof value === "string" ? value : value?.name || "")),
+  //     map((name) => (name ? this._filterBrands(name) : this.brands.slice()))
+  //   );
+  // }
 
   getProductDetails(productCode: any) {
     this.productService
@@ -257,7 +257,7 @@ export class AdminDashboardComponent {
       parentCategoryId: this.productPayload.productParentCategoryId,
       categoryId: this.productPayload.productCategoryId,
       subCategoryId: this.productPayload.productSubCategoryId,
-      brandId: this.productPayload.productBrandId,
+      // brandId: this.productPayload.productBrandId,
       price: this.productPayload.productPrice,
       colorId: this.productPayload.productColorId,
       productSizeMappingsList: productSizeMappingsList,

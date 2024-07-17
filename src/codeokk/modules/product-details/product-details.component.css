@@ -19,6 +19,10 @@
   margin-top: 10px;
 }
 
+.supplier-viewmore-link {
+  color: var(--dynamic-app-color);
+}
+
 .img-grid {
   overflow: hidden;
   width: 49.5%;
