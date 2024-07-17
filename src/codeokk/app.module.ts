@@ -1,7 +1,11 @@
 import { HashLocationStrategy, LocationStrategy } from "@angular/common";
 import { HTTP_INTERCEPTORS } from "@angular/common/http";
-import { NgModule } from "@angular/core";
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { forwardRef, NgModule } from "@angular/core";
+import {
+  FormsModule,
+  NG_VALUE_ACCESSOR,
+  ReactiveFormsModule,
+} from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { SharedModule } from "src/codeokk/shared/shared.module";
@@ -32,8 +36,8 @@ import { MatSnackBarModule } from "@angular/material/snack-bar";
 import { AdminModule } from "./modules/admin/admin.module";
 import { MatDialogModule } from "@angular/material/dialog";
 import { JwtInterceptor } from "./modules/auth/interceptor/JwtInterceptor";
-import { TryAtHomeComponent } from './modules/try-at-home/try-at-home.component';
-import { ArViewComponent } from './modules/ar-view/ar-view.component';
+import { TryAtHomeComponent } from "./modules/try-at-home/try-at-home.component";
+import { ArViewComponent } from "./modules/ar-view/ar-view.component";
 
 @NgModule({
   declarations: [

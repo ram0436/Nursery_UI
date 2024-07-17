@@ -51,11 +51,11 @@ export class ProductService {
   }
 
   saveProjectCodePost(payLoad: any) {
-    return this.http.post(`${this.BaseURL}/Product`, payLoad);
+    return this.http.post(`${this.BaseURL}Product`, payLoad);
   }
 
   updateProjectCodePost(productId: any, payLoad: any) {
-    return this.http.put(`${this.BaseURL}/Product/${productId}`, payLoad);
+    return this.http.put(`${this.BaseURL}Product/${productId}`, payLoad);
   }
 
   searchAds(searchQuery: string): Observable<any[]> {
